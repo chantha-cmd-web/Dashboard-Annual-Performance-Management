@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Evaluation": {
+      "title": "Evaluation",
+      "description": "An annual performance evaluation record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "employeeName": { "type": "string" },
+        "position": { "type": "string" },
+        "hiredDate": { "type": "string" },
+        "campus": { "type": "string" },
+        "gender": { "type": "string" },
+        "appraiser": { "type": "string" },
+        "reviewDate": { "type": "string" },
+        "criteria": { "type": "array" },
+        "superScores": { "type": "array" },
+        "totalSelf": { "type": "number" },
+        "totalSuper": { "type": "number" },
+        "overallScore": { "type": "number" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["employeeId", "employeeName", "overallScore"]
+    },
+    "SystemUser": {
+      "title": "SystemUser",
+      "description": "An administrator system user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["id", "name", "password", "role"]
+    }
+  },
+  "firestore": {
+    "evaluations/{evaluationId}": {
+      "schema": "Evaluation",
+      "description": "Evaluations records list"
+    },
+    "system_users/{userId}": {
+      "schema": "SystemUser",
+      "description": "Administrator system users"
+    }
+  }
+}
