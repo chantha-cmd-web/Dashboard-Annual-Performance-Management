@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans Khmer", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+  /* Hide scrollbars but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Day Mode Themes Custom Overrides with high contrast bold text styles & upscale typography */
+.day-mode {
+  --card-bg: #ffffff;
+  --card-border: #cbd5e1;
+  --text-main: #000000;
+  --text-muted: #1e293b;
+  --text-labels: #000000;
+  font-size: 15.5px !important; /* Increase root baseline text size slightly */
+}
+
+/* Bold black text for accessibility with larger sizing in Day Mode */
+.day-mode h1, 
+.day-mode h2, 
+.day-mode h3, 
+.day-mode h4,
+.day-mode h5,
+.day-mode th {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+.day-mode h1 { font-size: 1.55rem !important; }
+.day-mode h2 { font-size: 2.25rem !important; }
+.day-mode h3 { font-size: 1.35rem !important; }
+.day-mode h4 { font-size: 1.15rem !important; }
+
+/* General day-mode text styles */
+.day-mode p, 
+.day-mode span:not(.font-mono):not(.bg-indigo-400):not(.text-indigo-300):not(.text-indigo-400):not(.text-sky-400):not(.text-emerald-400):not(.text-rose-400) {
+  color: #0c0f19 !important;
+  font-weight: 700 !important;
+}
+
+/* Ensure descriptions and notes inside competency rows are formatted with larger text */
+.day-mode .grid h4 {
+  font-size: 1.15rem !important;
+  font-weight: 900 !important;
+}
+.day-mode .grid span,
+.day-mode .grid p,
+.day-mode .grid b {
+  font-size: 0.925rem !important;
+  font-weight: 750 !important;
+}
+
+.day-mode label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.025em !important;
+}
+
+/* Responsive containers styled with elegant grey-white clean looks by default */
+.day-mode .bg-slate-900\/40,
+.day-mode .bg-slate-950\/40,
+.day-mode .bg-slate-900\/45,
+.day-mode .bg-slate-950\/45,
+.day-mode .bg-slate-900\/65,
+.day-mode .bg-[#0b0c2a],
+.day-mode .bg-[#0e1236],
+.day-mode .bg-[#0c0d24] {
+  background-color: #ffffff !important;
+  border: 2px solid #cbd5e1 !important;
+  color: #000000 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Module 1: New Evaluation Form (Premium Corporate Slate Blue Theme) */
+.day-mode .module-form .bg-slate-900\/40 {
+  background-color: #f8fafc !important;
+  border: 2px solid #94a3b8 !important;
+  color: #000000 !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.08) !important;
+}
+.day-mode .module-form .bg-slate-950\/45,
+.day-mode .module-form .bg-slate-950\/20 {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #000000 !important;
+}
+
+/* Module 2: Dashboard Reports (Premium Executive Emerald & Mint Theme) */
+.day-mode .module-dashboard .bg-slate-900\/40,
+.day-mode .module-dashboard .bg-slate-900\/45,
+.day-mode .module-dashboard .bg-slate-950\/45 {
+  background-color: #f0fdf4 !important;
+  border: 2px solid #86efac !important;
+  color: #064e3b !important;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.08) !important;
+}
+.day-mode .module-dashboard h2,
+.day-mode .module-dashboard .text-white {
+  color: #047857 !important;
+  font-weight: 950 !important;
+}
+.day-mode .module-dashboard p,
+.day-mode .module-dashboard span {
+  color: #115e59 !important;
+}
+
+/* Module 3: Manage Administrators (Premium Royal Amber & Gold Theme) */
+.day-mode .module-manageusers .bg-slate-900\/40,
+.day-mode .module-manageusers .bg-slate-950\/45 {
+  background-color: #fffbeb !important;
+  border: 2px solid #fcd34d !important;
+  color: #78350f !important;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.08) !important;
+}
+.day-mode .module-manageusers h2,
+.day-mode .module-manageusers .text-white {
+  color: #b45309 !important;
+  font-weight: 950 !important;
+}
+.day-mode .module-manageusers p,
+.day-mode .module-manageusers span:not(.text-emerald-400):not(.text-indigo-400):not(.text-sky-400) {
+  color: #92400e !important;
+}
+
+/* Specific styling for criteria block sub-categories (components cards) */
+.day-mode .border-b.border-slate-800\/40 {
+  border-bottom: 2px solid #cbd5e1 !important;
+  background-color: #f8fafc !important; /* Soft grey-white row backdrop */
+  border-radius: 8px !important;
+  margin-bottom: 4px !important;
+}
+.day-mode .border-b.border-slate-800\/40:hover {
+  background-color: #f1f5f9 !important; /* Alternate light grey hover state */
+}
+
+/* Ensure hardcoded whites change to solid black inside Day Mode card elements */
+.day-mode .bg-slate-900\/40 .text-white,
+.day-mode .bg-slate-950\/40 .text-white,
+.day-mode .bg-slate-900\/45 .text-white,
+.day-mode .bg-slate-900\/65 .text-white {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+/* Smooth input styling with bold font sizes */
+.day-mode inputValue,
+.day-mode input:not([type="checkbox"]), 
+.day-mode select, 
+.day-mode textarea {
+  background-color: #f8fafc !important;
+  color: #000000 !important;
+  border: 1.5px solid #94a3b8 !important;
+  font-size: 0.95rem !important;
+  font-weight: 750 !important;
+}
+
+.day-mode input:hover,
+.day-mode select:hover {
+  border-color: #475569 !important;
+}
+
+.day-mode input:focus, 
+.day-mode select:focus {
+  border-color: #4f46e5 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* Read only elements */
+.day-mode input[readonly] {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Table styles */
+.day-mode table,
+.day-mode tr,
+.day-mode td {
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.day-mode table th {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+.day-mode tr:nth-child(even) {
+  background-color: #fafbfc !important;
+}
+
+/* Universal border adjustments to clean off dark lines */
+.day-mode .border-slate-800,
+.day-mode .border-slate-700,
+.day-mode .border-slate-800\/60,
+.day-mode .border-slate-800\/50,
+.day-mode .border-slate-700\/45,
+.day-mode .border-slate-700\/60,
+.day-mode .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+.day-mode .text-slate-100 { color: #0f172a !important; }
+.day-mode .text-slate-300 { color: #1e293b !important; }
+.day-mode .text-slate-400 { color: #334155 !important; }
+.day-mode .text-slate-500 { color: #475569 !important; }
+.day-mode .text-slate-600 { color: #475569 !important; }
+
+/* Scale list color helpers */
+.day-mode .bg-emerald-500\/5 { background-color: rgba(16, 185, 129, 0.08) !important; }
+.day-mode .bg-sky-500\/5 { background-color: rgba(56, 189, 248, 0.08) !important; }
+.day-mode .bg-indigo-500\/5 { background-color: rgba(99, 102, 241, 0.07) !important; }
+.day-mode .bg-amber-500\/5 { background-color: rgba(245, 158, 11, 0.08) !important; }
+.day-mode .bg-rose-500\/5 { background-color: rgba(244, 63, 94, 0.07) !important; }
+
+/* Selection autocomplete lists */
+.day-mode .absolute.z-50 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1) !important;
+}
+.day-mode .absolute.z-50 div {
+  color: #0f172a !important;
+  border-color: #f1f5f9 !important;
+}
+.day-mode .absolute.z-50 div:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.day-mode .text-indigo-300 { color: #4f46e5 !important; }
+.day-mode .text-sky-400 { color: #0284c7 !important; }
+
+/* 
+  SIDEBAR OVERRIDES FOR DAY MODE
+  Clean white/grey background with bold black text.
+*/
+.day-mode sidebar {
+  background-color: #ffffff !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+.day-mode sidebar h1 {
+  color: #000000 !important;
+  font-weight: 1000 !important;
+}
+
+.day-mode sidebar .text-slate-400,
+.day-mode sidebar .text-slate-500,
+.day-mode sidebar .text-slate-300 {
+  color: #475569 !important;
+  font-weight: 800 !important;
+}
+
+.day-mode sidebar button {
+  color: #1e293b !important;
+  font-weight: 900 !important;
+}
+
+.day-mode sidebar button:hover {
+  color: #000000 !important;
+  background-color: #f1f5f9 !important;
+}
+
+.day-mode sidebar button.bg-slate-800\/60 {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #000000 !important;
+}
+
+.day-mode sidebar button span {
+  color: inherit !important;
+}
+
+.day-mode sidebar .bg-slate-900\/65 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.day-mode sidebar .bg-slate-900\/65 h4 {
+  color: #000000 !important;
+}
+
+.day-mode sidebar .bg-slate-900\/65 span {
+  color: #64748b !important;
+}
+
+.day-mode sidebar .border-slate-800\/60,
+.day-mode sidebar .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+.day-mode sidebar .text-rose-400,
+.day-mode sidebar .text-rose-450 {
+  color: #e11d48 !important;
+}
+
+.day-mode sidebar button svg {
+  color: inherit !important;
+  opacity: 0.85;
+}

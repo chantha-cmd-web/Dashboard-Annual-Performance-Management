@@ -1,0 +1,14 @@
+{
+  "name": "telegram-function",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^6.3.2",
+    "firebase-admin": "^13.2.0"
+  },
+  "engines": {
+    "node": "20"
+  }
+}

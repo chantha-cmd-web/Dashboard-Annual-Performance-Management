@@ -8,3 +8,5 @@ coverage/
 !.env.example
 
 .vercel
+functions/node_modules/
+.firebase/
